@@ -9,6 +9,7 @@ class HomePage(BasePage):
      def __init__(self, driver, wait_time=20):
         super().__init__(driver, wait_time)
         
-     def goto_signup_page(self, ):
+     def goto_signup_page(self):
           print("Going into login page")
+          self.navigate_to(base_url)
           self.click_element(self.login_nav)
