@@ -1,11 +1,10 @@
+# web_setup.py
 from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
-import os
-
 
 def web_driver():
-    os.environ['WDM_LOCAL'] = '1'
-    os.environ['WDM_DIR'] = './drivers'
-
-    driver = webdriver.Chrome(ChromeDriverManager().install())
+    service = Service(ChromeDriverManager().install())
+    driver = webdriver.Chrome(service=service)
+    driver.maximize_window()
     return driver
