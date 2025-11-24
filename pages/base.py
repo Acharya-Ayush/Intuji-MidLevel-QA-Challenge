@@ -3,6 +3,7 @@ from selenium.webdriver import ActionChains
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.ui import Select
 
 
 class BasePage:
@@ -120,6 +121,9 @@ class BasePage:
         alert = self.driver.switch_to.alert
         alert.dismiss()
 
+    def select_from_dropdown(self, locator, text):
+        dropdown = Select(self.find_element(locator))
+        dropdown.select_by_visible_text(text)
 
 
 
