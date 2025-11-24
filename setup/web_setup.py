@@ -8,8 +8,7 @@ def web_driver():
     options = ChromeOptions()
     options.browser_version = 'latest'
     options.platform_name = 'Windows 10'
-    url = "https://ondemand.eu-central-1.saucelabs.com:443/wd/hub"
-    driver = webdriver.Remote(command_executor=url, options=options)
+    driver = webdriver.Remote(options=options)
     driver.maximize_window()
 
     return driver
