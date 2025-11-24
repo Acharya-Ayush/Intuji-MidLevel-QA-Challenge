@@ -16,3 +16,6 @@ Before Execution What to do?
 - It is always crutual to keep .env file ignored but for ease I am keeping the file in the ROOT REPO
 - Signup is done only one time so make sure you change the credentials from .env file everytime before you run the signup test case. 
 
+To run basic test case: 
+- Write script: pytest -s <test file name>
+
