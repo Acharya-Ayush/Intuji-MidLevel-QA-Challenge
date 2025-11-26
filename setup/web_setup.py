@@ -6,11 +6,13 @@ from selenium.webdriver.chrome.options import Options
 
 def web_driver():
     options = Options()
-    options.add_argument("--disable-logging")
-    options.add_argument("--log-level=3")
+    # Only use below option if you wanna run headless tests.
+    # options.add_argument("--headless=new")  # NOTE: use new headless mode (Chrome 109+)
     options.add_argument("--disable-gpu")
-    options.add_argument("--disable-dev-shm-usage")
-    options.add_argument("--no-sandbox")
+    options.add_argument("--disable-software-rasterizer") 
+    options.add_argument("--no-sandbox") # For linux uses
+    options.add_argument("--disable-accelerated-2d-canvas") # NOTE: disables extra GPU acceleration
+    options.add_argument("--disable-dev-shm-usage") # NOTE: avoids memory issues in Docker/VMs
 
     service = Service(ChromeDriverManager().install())
     driver = webdriver.Chrome(service=service, options=options)
