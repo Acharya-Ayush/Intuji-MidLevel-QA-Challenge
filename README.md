@@ -8,7 +8,6 @@ Before running the project make sure that all the requirements are met.
 3. Activate the environment: "NOTE: venv folder name".\Scripts\activate 
 4. Install pip: py get-pip.py
 5. Intialize all the requirements using requirements.txt file.
-6. Add a .env file in root dir and write the credentials there so that credentials are hidden from other.
 
 You are ready to run the tests ;D
 

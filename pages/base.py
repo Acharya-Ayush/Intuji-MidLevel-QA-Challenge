@@ -21,6 +21,10 @@ class BasePage:
             EC.presence_of_element_located(locator)
         )
 
+    def find_elements(self, locator, wait_time = 30):
+        return WebDriverWait(self.driver, wait_time).until(
+            EC.presence_of_all_elements_located(locator)
+        )
 
     def clear_element(self, locator):
         element = self.find_element(locator)
